@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PackingListComponent } from './packing-list/packing-list.component';
 import { ImprintComponent } from './imprint/imprint.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -42,4 +42,12 @@ import { MatListModule } from '@angular/material/list';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(swUpdate: SwUpdate) {
+    swUpdate.versionUpdates.subscribe((evt) => {
+      if (evt.type === 'VERSION_READY' && confirm ("We have a new version for you 🥳")) {
+        location.reload();
+      }
+    })
+  }
+ }
