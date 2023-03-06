@@ -4,6 +4,7 @@
 <ul>
     <li *ngFor="let listitem of packinglist">
         {{ listitem.title }}
-        <button>{{ listitem.done }}</button>
+        <input type="checkbox" checked (click)="toggleDone(listitem)">{{listitem.done}}>
     </li>
 </ul>
+

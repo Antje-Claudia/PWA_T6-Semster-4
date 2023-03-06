@@ -20,6 +20,12 @@ export class PackingListComponent {
     await this.refresh();
   }
 
+  async toggleDone(listitem: PackingList) {
+    listitem.done = !listitem.done;
+    await this.packinglistService.packinglist.put(listitem);
+    await this.refresh();
+  }
+
   async refresh() {
     this.packinglist = await this.packinglistService.getAll();
   }
