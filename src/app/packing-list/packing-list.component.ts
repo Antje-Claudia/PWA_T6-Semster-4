@@ -8,11 +8,19 @@ import { PackingList } from '../packing-list';
   styleUrls: ['./packing-list.component.css']
 })
 export class PackingListComponent {
-packinglist: PackingList[]=[];
+
+  packinglist: PackingList[]=[];
+  
   constructor(private packinglistService: PackingListService ){
-    }
+    this.refresh();
+  }
 
   async add (title: string){
     await this.packinglistService.add(title);
+    await this.refresh();
+  }
+
+  async refresh() {
+    this.packinglist = await this.packinglistService.getAll();
   }
 }
