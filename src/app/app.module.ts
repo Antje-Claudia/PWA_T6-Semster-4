@@ -18,6 +18,7 @@ import { SkiTourComponent } from './ski-tour/ski-tour.component';
 import { SummerTripComponent } from './summer-trip/summer-trip.component';
 import { HikeComponent } from './hike/hike.component';
 import { WeekendTripComponent } from './weekend-trip/weekend-trip.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { WeekendTripComponent } from './weekend-trip/weekend-trip.component';
     SkiTourComponent,
     SummerTripComponent,
     HikeComponent,
-    WeekendTripComponent
+    WeekendTripComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
