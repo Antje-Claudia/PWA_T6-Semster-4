@@ -1,1 +1,9 @@
-<p>hike works!</p>
+<input type="text" #input>
+<button (click)="add(input.value)">Add Item</button>
+
+<ul>
+    <li *ngFor="let listitemhike of packinglisthike">
+        {{ listitemhike.title }}
+        <input type="checkbox" [checked]="listitemhike.done" (click)="toggleDone(listitemhike)">
+    </li>
+</ul>
