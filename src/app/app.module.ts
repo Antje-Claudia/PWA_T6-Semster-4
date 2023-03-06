@@ -14,13 +14,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { SkiTourComponent } from './ski-tour/ski-tour.component';
+import { SummerTripComponent } from './summer-trip/summer-trip.component';
+import { HikeComponent } from './hike/hike.component';
+import { WeekendTripComponent } from './weekend-trip/weekend-trip.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PackingListComponent,
     ImprintComponent,
-    NavComponent
+    NavComponent,
+    SkiTourComponent,
+    SummerTripComponent,
+    HikeComponent,
+    WeekendTripComponent
   ],
   imports: [
     BrowserModule,
