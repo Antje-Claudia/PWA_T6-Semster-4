@@ -19,6 +19,7 @@ import { SummerTripComponent } from './summer-trip/summer-trip.component';
 import { HikeComponent } from './hike/hike.component';
 import { WeekendTripComponent } from './weekend-trip/weekend-trip.component';
 import { HomeComponent } from './home/home.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HomeComponent } from './home/home.component';
     SummerTripComponent,
     HikeComponent,
     WeekendTripComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -45,9 +47,13 @@ import { HomeComponent } from './home/home.component';
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule
+  ],
+  exports: [
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
