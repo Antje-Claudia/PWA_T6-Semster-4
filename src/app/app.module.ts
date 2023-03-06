@@ -52,9 +52,6 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatListModule
   ],
-  exports: [
-    MatCardModule,
-  ],
   providers: [],
   bootstrap: [AppComponent]
 })

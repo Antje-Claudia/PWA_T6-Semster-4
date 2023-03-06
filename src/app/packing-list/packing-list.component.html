@@ -1,13 +1,15 @@
+<mat-card>
+    <mat-card-content>
+        <h1>Add your packing items here</h1>
 
-
-<h1>Add your packing items here</h1>
-
-<input type="text" #input>
-<button (click)="add(input.value)">Add Item</button>
-
-<ul>
-    <li *ngFor="let listitem of packinglist">
-        {{ listitem.title }}
-        <input type="checkbox" [checked]="listitem.done" (click)="toggleDone(listitem)">
-    </li>
-</ul>
+        <input type="text" #input>
+        <button (click)="add(input.value)">Add Item</button>
+        
+        <ul>
+            <li *ngFor="let listitem of packinglist">
+                {{ listitem.title }}
+                <input type="checkbox" [checked]="listitem.done" (click)="toggleDone(listitem)">
+            </li>
+        </ul>        
+    </mat-card-content>
+</mat-card>
