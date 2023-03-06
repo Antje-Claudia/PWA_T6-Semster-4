@@ -6,24 +6,24 @@ import { PackingList } from './packing-list';
   providedIn: 'root'
 })
 export class PackingListService extends Dexie {
-  listitem!: Dexie.Table<PackingList, string>;
+  packinglist!: Dexie.Table<PackingList, string>;
   constructor() { 
     super("packing-list-db");
     this.version(1).stores({
-      listitem: 'id'
+      packinglist: 'id'
     })
 }
 
   async add(title: string){
-    const packinglist = {title, id: crypto.randomUUID(), done:false };
-    await this.listitem.add(packinglist);
+    const listitem = {title, id: crypto.randomUUID(), done:false };
+    await this.packinglist.add(listitem);
   }
 
   async getAll(){
-    return await this.listitem.toArray();
+    return await this.packinglist.toArray();
   }
 
-  async bulkPut(listitem: PackingList[]) {
-  await this.listitem.bulkPut(listitem);
+  async bulkPut(packinglist: PackingList[]) {
+  await this.packinglist.bulkPut(packinglist);
   }
 }
