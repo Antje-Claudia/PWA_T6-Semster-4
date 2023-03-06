@@ -7,7 +7,8 @@
 }
 
 .sidenav .mat-toolbar {
-  background: inherit;
+  background: #4F738F;
+  color: white;
 }
 
 .mat-toolbar.mat-primary {
