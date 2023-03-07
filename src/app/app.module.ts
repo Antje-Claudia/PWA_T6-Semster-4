@@ -25,7 +25,8 @@ import { DiaryComponent } from './diary/diary.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
-
+import {TextFieldModule} from '@angular/cdk/text-field';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,9 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    TextFieldModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
