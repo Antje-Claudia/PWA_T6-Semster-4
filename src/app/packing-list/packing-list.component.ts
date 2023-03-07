@@ -24,6 +24,7 @@ export class PackingListComponent {
     listitem.done = !listitem.done;
     await this.packinglistService.packinglist.put(listitem);
     await this.refresh();
+    console.info("getoggelt");
   }
 
   async refresh() {

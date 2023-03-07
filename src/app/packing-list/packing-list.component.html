@@ -5,11 +5,12 @@
         <input type="text" #input>
         <button (click)="add(input.value)">Add Item</button>
         
-        <ul>
-            <li *ngFor="let listitem of packinglist">
+        <!-- Funktioniert noch nicht / Wäre aber schöner als die obige liste, da nativ in Material -->
+        <mat-selection-list #input >
+            <mat-list-option [selected]="listitem.done" *ngFor="let listitem of packinglist" [value]="listitem.title" (click)="toggleDone(listitem)">
                 {{ listitem.title }}
-                <input type="checkbox" [checked]="listitem.done" (click)="toggleDone(listitem)">
-            </li>
-        </ul>        
+            </mat-list-option>
+        </mat-selection-list>     
     </mat-card-content>
 </mat-card>
+
