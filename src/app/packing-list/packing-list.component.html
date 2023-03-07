@@ -2,8 +2,14 @@
     <mat-card-content>
         <h1>Add your packing items here</h1>
 
-        <input type="text" #input>
-        <button (click)="add(input.value)">Add Item</button>
+
+    <input matInput placeholder="Placeholder" type="text" #input>
+    <button mat-raised-button color="primary" (click)="add(input.value)">Add Item</button>
+
+    
+
+        
+        
         
         <!-- Funktioniert noch nicht / Wäre aber schöner als die obige liste, da nativ in Material -->
         <mat-selection-list #input >

@@ -20,6 +20,8 @@ import { HikeComponent } from './hike/hike.component';
 import { WeekendTripComponent } from './weekend-trip/weekend-trip.component';
 import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
