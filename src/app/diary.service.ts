@@ -16,7 +16,6 @@ export class DiaryService extends Dexie{
     })
 }
 
-// Todo: Date prüfen
 // content und datum hinzufügen
 async add(content: string, date: Date | null){
   const diaryitem = {id: crypto.randomUUID(), content, date };
@@ -26,6 +25,17 @@ async add(content: string, date: Date | null){
 async getAll(){
   // Daten aus Dexi lesen und in Array konvertieren, sowie returnen
   return await this.diarylist.toArray();
+}
+
+
+// Geht nicht 
+async removeAll() {
+  await this.diarylist.clear;
+}
+
+// Löscht item mit der übergebenen ID 
+async deletediaryitem(id: string) {
+  await this.diarylist.delete(id);
 }
 
 }

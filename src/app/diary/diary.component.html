@@ -44,8 +44,14 @@
     <li *ngFor="let diaryitem of diary">
         {{ diaryitem.content}}
         Datum: {{ diaryitem.date }}
+
+        <!-- Aktuelles item löschen -->
+        <button (click)="deletediaryitem(diaryitem.id)">Delete</button>
     </li>
 </ul>
+
+<!-- Alles löschen/resetten -->
+<button mat-raised-button color="primary" (click)="reset()">Reset</button>
 
     </mat-card-content>
 </mat-card>

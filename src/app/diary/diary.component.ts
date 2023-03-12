@@ -43,5 +43,15 @@ export class DiaryComponent {
     this.diary = await this.diaryService.getAll();
   }
 
+  async reset() {
+    await this.diaryService.removeAll();
+    await this.refresh();
+  }
+
+  // Löscht item mit der übergebenen ID und lädt Daten neu aus DB mit refresh
+  async deletediaryitem(id: string) {
+    await this.diaryService.deletediaryitem(id);
+    await this.refresh();
+  }
 
 }
