@@ -1,5 +1,6 @@
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {Component, Injectable, NgZone, ViewChild} from '@angular/core';
+import { FormControl } from '@angular/forms';
 import {take} from 'rxjs/operators';
 import { Diary } from '../diary';
 import { DiaryService } from '../diary.service';
@@ -13,6 +14,8 @@ import { DiaryService } from '../diary.service';
 //Injectable ja ode rnein - ist von mir 
 @Injectable()
 export class DiaryComponent {
+
+  date = new FormControl(new Date());
   // constructor(private _ngZone: NgZone) {}
 
   @ViewChild('autosize')
@@ -31,7 +34,7 @@ export class DiaryComponent {
   }
 
   // content und Date aus Feld auslesen und an diaryService.add übergeben
-  async add (content: string, date: string){
+  async add (content: string, date: Date | null){
     await this.diaryService.add(content, date);
     await this.refresh();
   }

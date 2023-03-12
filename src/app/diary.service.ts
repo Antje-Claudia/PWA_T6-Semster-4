@@ -18,7 +18,7 @@ export class DiaryService extends Dexie{
 
 // Todo: Date prüfen
 // content und datum hinzufügen
-async add(content: string, date: string){
+async add(content: string, date: Date | null){
   const diaryitem = {id: crypto.randomUUID(), content, date };
   await this.diarylist.add(diaryitem);
 }
