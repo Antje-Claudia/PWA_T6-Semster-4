@@ -40,15 +40,19 @@
 
 
 <!-- Ausgabe der Liste -->
-<ul>
-    <li *ngFor="let diaryitem of diary">
-        {{ diaryitem.content}}
-        Datum: {{ diaryitem.date }}
-
-        <!-- Aktuelles item löschen -->
-        <button (click)="deletediaryitem(diaryitem.id)">Delete</button>
-    </li>
-</ul>
+<mat-list class="list-wrapping">
+    <mat-list-item lines="10" *ngFor="let diaryitem of diary">
+        <div class="list-item">
+            <div class="list-item-content">
+                <span matListItemTitle>Diary from: {{ diaryitem.date }}</span>
+                <span>{{ diaryitem.content }}</span>
+            </div>
+            <div div class="delete-button-container">
+                <button mat-fab color="primary" color="primary" (click)="deletediaryitem(diaryitem.id)"><mat-icon>delete</mat-icon></button>
+            </div>
+        </div>
+    </mat-list-item>
+  </mat-list>
 
 <!-- Alles löschen/resetten -->
 <button mat-raised-button color="primary" (click)="reset()">Reset</button>

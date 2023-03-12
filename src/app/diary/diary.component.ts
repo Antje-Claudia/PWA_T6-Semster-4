@@ -43,6 +43,8 @@ export class DiaryComponent {
     this.diary = await this.diaryService.getAll();
   }
 
+  
+
   async reset() {
     await this.diaryService.removeAll();
     await this.refresh();
