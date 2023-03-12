@@ -1,5 +1,6 @@
 export interface Diary {
     id: string;
     content: string;
-    date: Date;
+    // date: Date; // prüfen
+    date: string;
 }

@@ -13,30 +13,32 @@ import { DiaryService } from '../diary.service';
 //Injectable ja ode rnein - ist von mir 
 @Injectable()
 export class DiaryComponent {
-  constructor(private _ngZone: NgZone) {}
+  // constructor(private _ngZone: NgZone) {}
 
   @ViewChild('autosize')
   autosize!: CdkTextareaAutosize;
 
-  triggerResize() {
-    // Wait for changes to be applied, then trigger textarea resize.
-    this._ngZone.onStable.pipe(take(1)).subscribe(() => this.autosize.resizeToFitContent(true));
-  }}
-//nochmal ein Constructor - kann das stimmen 
-  export class PackingListComponent {
-diary: Diary[]=[];
-  
+  // triggerResize() {
+  //   // Wait for changes to be applied, then trigger textarea resize.
+  //   this._ngZone.onStable.pipe(take(1)).subscribe(() => this.autosize.resizeToFitContent(true));
+  // }
+
+  diary: Diary[]=[];
+
+
   constructor(private diaryService: DiaryService ){
     this.refresh();
   }
 
-
-  async add (title: string){
-    await this.diaryService.add(title);
+  // content und Date aus Feld auslesen und an diaryService.add übergeben
+  async add (content: string, date: string){
+    await this.diaryService.add(content, date);
     await this.refresh();
   }
 
   async refresh() {
     this.diary = await this.diaryService.getAll();
   }
+
+
 }

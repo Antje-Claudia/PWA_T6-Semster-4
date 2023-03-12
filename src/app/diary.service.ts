@@ -6,22 +6,26 @@ import { Diary } from './diary';
   providedIn: 'root'
 })
 export class DiaryService extends Dexie{
-  packinglist!: Dexie.Table<Diary, string>;
-  diary: any;
+  // 1. Dexie wird mit Interface Diary erstellt
+  diarylist!: Dexie.Table<Diary, string>;
+  
   constructor() { 
     super("diary-db");
     this.version(1).stores({
-      packinglist: 'id'
+      diarylist: 'id'
     })
 }
 
-async add(title: string){
-  const diaryitem = {id: crypto.randomUUID(), content:String, date: Date };
-  await this.diary.add(diaryitem);
+// Todo: Date prüfen
+// content und datum hinzufügen
+async add(content: string, date: string){
+  const diaryitem = {id: crypto.randomUUID(), content, date };
+  await this.diarylist.add(diaryitem);
 }
 
 async getAll(){
-  return await this.packinglist.toArray();
+  // Daten aus Dexi lesen und in Array konvertieren, sowie returnen
+  return await this.diarylist.toArray();
 }
 
 }

@@ -9,30 +9,41 @@
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
+        <!-- Testweise eigenes Input feld -->
+        <input matInput placeholder="Test Datum" type="text" #date>
+
     <br>
     <br>
 
 
         <mat-form-field appearance="fill">
             <mat-label>Font size</mat-label>
-            <mat-select #fontSize value="16px" (selectionChange)="triggerResize()">
+            <!-- <mat-select #fontSize value="16px" (selectionChange)="triggerResize()"> -->
+            <mat-select #fontSize value="16px">
                 <mat-option value="10px">10px</mat-option>
-                <mat-option value="12px">12px</mat-option>
-                <mat-option value="14px">14px</mat-option>
-                <mat-option value="16px">16px</mat-option>
-                <mat-option value="18px">18px</mat-option>
                 <mat-option value="20px">20px</mat-option>
             </mat-select>
         </mat-form-field>
 
+        <!-- Input Feld für Diary content -->
         <mat-form-field [style.fontSize]="fontSize.value" appearance="fill">
             <mat-label>Autosize textarea</mat-label>
             <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-                cdkAutosizeMaxRows="5"></textarea>
+                cdkAutosizeMaxRows="5" #input></textarea>
         </mat-form-field>
 
         <!--Hier muss der erste Button aktviert werden, damit es Fehler wift-->
-        <!--<button mat-raised-button color="primary" (click)="add(input.value)">Add Item</button>-->
+        <button mat-raised-button color="primary" (click)="add(input.value, date.value)">Add Item</button>
         <!--<button mat-raised-button color="primary">Save</button>-->
+
+
+<!-- Ausgabe der Liste -->
+<ul>
+    <li *ngFor="let diaryitem of diary">
+        {{ diaryitem.content}}
+        Datum: {{ diaryitem.date }}
+    </li>
+</ul>
+
     </mat-card-content>
 </mat-card>
