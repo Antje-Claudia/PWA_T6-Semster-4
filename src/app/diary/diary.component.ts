@@ -11,20 +11,13 @@ import { DiaryService } from '../diary.service';
   styleUrls: ['./diary.component.css']
 })
 
-//Injectable ja ode rnein - ist von mir 
 @Injectable()
 export class DiaryComponent {
 
   date = new FormControl(new Date());
-  // constructor(private _ngZone: NgZone) {}
 
   @ViewChild('autosize')
   autosize!: CdkTextareaAutosize;
-
-  // triggerResize() {
-  //   // Wait for changes to be applied, then trigger textarea resize.
-  //   this._ngZone.onStable.pipe(take(1)).subscribe(() => this.autosize.resizeToFitContent(true));
-  // }
 
   diary: Diary[]=[];
 
@@ -43,8 +36,7 @@ export class DiaryComponent {
     this.diary = await this.diaryService.getAll();
   }
 
-
-// Todo: geht nicht
+  //Löscht alle Items aud der DB
   async reset() {
     await this.diaryService.removeAll();
     await this.refresh();

@@ -3,24 +3,16 @@
         <h1>Travel-Diary</h1>
         <h3>Your highlight diary for special moments</h3>
         <p>Collect your special memories in a few words.</p>
-<!-- Datepicker -->
+        <!-- Datepicker -->
         <mat-form-field>
-            <input
-                matInput
-                [matDatepicker]="picker"
-                placeholder="Angular forms"
-                [formControl]="date"
-            />
+            <input matInput [matDatepicker]="picker" placeholder="Angular forms" [formControl]="date" />
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
-    <br>
-    <br>
-
-
-    
+        <br>
+        <br>
 
         <!-- Input Feld für Diary content -->
         <mat-form-field appearance="fill">
@@ -31,23 +23,24 @@
 
         <button mat-raised-button color="primary" (click)="add(input.value, date.value)">Add Item</button>
 
-<!-- Ausgabe der Liste -->
-<mat-list class="list-wrapping">
-    <mat-list-item lines="10" *ngFor="let diaryitem of diary">
-        <div class="list-item">
-            <span class="list-item-content">
-                <p matListItemTitle>Diary from: {{ diaryitem.date }}</p>
-                <p>{{ diaryitem.content }}</p>
-            </span>
-            <div div class="delete-button-container">
-                <button mat-fab color="primary" color="primary" (click)="deletediaryitem(diaryitem.id)"><mat-icon>delete</mat-icon></button>
-            </div>
-        </div>
-    </mat-list-item>
-  </mat-list>
+        <!-- Ausgabe der Liste -->
+        <mat-list class="list-wrapping">
+            <mat-list-item lines="10" *ngFor="let diaryitem of diary">
+                <div class="list-item">
+                    <span class="list-item-content">
+                        <p matListItemTitle>Diary from: {{ diaryitem.date }}</p>
+                        <p>{{ diaryitem.content }}</p>
+                    </span>
+                    <div div class="delete-button-container">
+                        <button mat-fab color="primary" color="primary"
+                            (click)="deletediaryitem(diaryitem.id)"><mat-icon>delete</mat-icon></button>
+                    </div>
+                </div>
+            </mat-list-item>
+        </mat-list>
 
-<!-- Alles löschen/resetten -->
-<button mat-raised-button color="primary" (click)="reset()">Reset</button>
+        <!-- Alles löschen/resetten -->
+        <button mat-raised-button color="primary" (click)="reset()">Reset</button>
 
     </mat-card-content>
 </mat-card>
