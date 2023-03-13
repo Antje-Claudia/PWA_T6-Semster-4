@@ -1,7 +1,6 @@
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {Component, Injectable, NgZone, ViewChild} from '@angular/core';
 import { FormControl } from '@angular/forms';
-import {take} from 'rxjs/operators';
 import { Diary } from '../diary';
 import { DiaryService } from '../diary.service';
 
@@ -20,7 +19,6 @@ export class DiaryComponent {
   autosize!: CdkTextareaAutosize;
 
   diary: Diary[]=[];
-
 
   constructor(private diaryService: DiaryService ){
     this.refresh();
