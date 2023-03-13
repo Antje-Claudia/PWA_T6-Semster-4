@@ -16,4 +16,9 @@
 .list-item-content {
     display: flex;
     flex-direction: column;
+    word-wrap:break-word;
+}
+
+.list-item-content span {
+    word-wrap:break-word;
 }
