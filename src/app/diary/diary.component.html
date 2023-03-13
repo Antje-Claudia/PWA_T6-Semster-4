@@ -18,17 +18,10 @@
     <br>
 
 
-        <mat-form-field appearance="fill">
-            <mat-label>Font size</mat-label>
-            <!-- <mat-select #fontSize value="16px" (selectionChange)="triggerResize()"> -->
-            <mat-select #fontSize value="16px">
-                <mat-option value="10px">10px</mat-option>
-                <mat-option value="20px">20px</mat-option>
-            </mat-select>
-        </mat-form-field>
+    
 
         <!-- Input Feld für Diary content -->
-        <mat-form-field [style.fontSize]="fontSize.value" appearance="fill">
+        <mat-form-field appearance="fill">
             <mat-label>Autosize textarea</mat-label>
             <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
                 cdkAutosizeMaxRows="5" #input></textarea>
