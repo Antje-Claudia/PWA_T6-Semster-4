@@ -14,10 +14,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { SkiTourComponent } from './ski-tour/ski-tour.component';
-import { SummerTripComponent } from './summer-trip/summer-trip.component';
-import { HikeComponent } from './hike/hike.component';
-import { WeekendTripComponent } from './weekend-trip/weekend-trip.component';
 import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -35,10 +31,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PackingListComponent,
     ImprintComponent,
     NavComponent,
-    SkiTourComponent,
-    SummerTripComponent,
-    HikeComponent,
-    WeekendTripComponent,
     HomeComponent,
     DiaryComponent,
     
