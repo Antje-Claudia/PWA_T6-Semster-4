@@ -43,8 +43,8 @@ export class DiaryComponent {
     this.diary = await this.diaryService.getAll();
   }
 
-  
 
+// Todo: geht nicht
   async reset() {
     await this.diaryService.removeAll();
     await this.refresh();

@@ -28,7 +28,7 @@ async getAll(){
 }
 
 
-// Geht nicht 
+// Todo: Geht nicht 
 async removeAll() {
   await this.diarylist.clear;
 }
