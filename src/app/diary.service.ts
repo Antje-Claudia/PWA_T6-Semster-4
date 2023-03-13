@@ -30,7 +30,7 @@ async getAll(){
 
 // Todo: Geht nicht 
 async removeAll() {
-  await this.diarylist.clear;
+  await this.diarylist.clear();
 }
 
 // Löscht item mit der übergebenen ID 
