@@ -21,7 +21,13 @@ import { WeekendTripComponent } from './weekend-trip/weekend-trip.component';
 import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { DiaryComponent } from './diary/diary.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import {TextFieldModule} from '@angular/cdk/text-field';
+import {MatSelectModule} from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +40,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HikeComponent,
     WeekendTripComponent,
     HomeComponent,
+    DiaryComponent,
     
   ],
   imports: [
@@ -53,7 +60,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    TextFieldModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

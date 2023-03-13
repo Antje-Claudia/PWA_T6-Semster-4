@@ -1,0 +1,61 @@
+<mat-card>
+    <mat-card-content>
+        <h1>Tarvel-Diary</h1>
+<!-- Datepicker -->
+        <mat-form-field>
+            <input
+                matInput
+                [matDatepicker]="picker"
+                placeholder="Angular forms"
+                [formControl]="date"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+    <br>
+    <br>
+
+
+        <mat-form-field appearance="fill">
+            <mat-label>Font size</mat-label>
+            <!-- <mat-select #fontSize value="16px" (selectionChange)="triggerResize()"> -->
+            <mat-select #fontSize value="16px">
+                <mat-option value="10px">10px</mat-option>
+                <mat-option value="20px">20px</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Input Feld für Diary content -->
+        <mat-form-field [style.fontSize]="fontSize.value" appearance="fill">
+            <mat-label>Autosize textarea</mat-label>
+            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="5" #input></textarea>
+        </mat-form-field>
+
+        <!--Hier muss der erste Button aktviert werden, damit es Fehler wift-->
+        <button mat-raised-button color="primary" (click)="add(input.value, date.value)">Add Item</button>
+        <!--<button mat-raised-button color="primary">Save</button>-->
+
+
+<!-- Ausgabe der Liste -->
+<mat-list class="list-wrapping">
+    <mat-list-item lines="10" *ngFor="let diaryitem of diary">
+        <div class="list-item">
+            <div class="list-item-content">
+                <span matListItemTitle>Diary from: {{ diaryitem.date }}</span>
+                <span>{{ diaryitem.content }}</span>
+            </div>
+            <div div class="delete-button-container">
+                <button mat-fab color="primary" color="primary" (click)="deletediaryitem(diaryitem.id)"><mat-icon>delete</mat-icon></button>
+            </div>
+        </div>
+    </mat-list-item>
+  </mat-list>
+
+<!-- Alles löschen/resetten -->
+<button mat-raised-button color="primary" (click)="reset()">Reset</button>
+
+    </mat-card-content>
+</mat-card>
