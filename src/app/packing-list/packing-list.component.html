@@ -1,9 +1,20 @@
-<input type="text" #input>
-<button (click)="add(input.value)">Add Item</button>
+<mat-card>
+    <mat-card-content>
+        <h1>Add your packing items here</h1>
 
-<ul>
-    <li *ngFor="let listitem of packinglist">
-        {{ listitem.title }}
-        <input type="checkbox" [checked]="listitem.done" (click)="toggleDone(listitem)">
-    </li>
-</ul>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Shoes</mat-label>
+            <input matInput placeholder="Shoes" value="" #input>
+        </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="add(input.value)">Add Item</button> 
+
+        <mat-selection-list #list>
+            <mat-list-option *ngFor="let listitem of packinglist" [value]="listitem.id" (click)="toggleDone(listitem)" [selected]="listitem.done">
+                {{ listitem.title }}
+            </mat-list-option>
+        </mat-selection-list>     
+    </mat-card-content>
+</mat-card>
+

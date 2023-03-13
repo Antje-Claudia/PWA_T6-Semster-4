@@ -6,7 +6,9 @@ import { PackingList } from './packing-list';
   providedIn: 'root'
 })
 export class PackingListService extends Dexie {
+  // 1. Dexie wird mit Interface PackingList erstellt
   packinglist!: Dexie.Table<PackingList, string>;
+  
   constructor() { 
     super("packing-list-db");
     this.version(1).stores({

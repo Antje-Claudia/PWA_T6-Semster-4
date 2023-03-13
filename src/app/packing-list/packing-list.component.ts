@@ -10,7 +10,7 @@ import { PackingList } from '../packing-list';
 export class PackingListComponent {
 
   packinglist: PackingList[]=[];
-  
+
   constructor(private packinglistService: PackingListService ){
     this.refresh();
   }
@@ -28,5 +28,6 @@ export class PackingListComponent {
 
   async refresh() {
     this.packinglist = await this.packinglistService.getAll();
+    
   }
 }

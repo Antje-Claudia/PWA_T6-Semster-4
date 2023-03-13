@@ -5,16 +5,10 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="Packing-List">Packing-List</a>
-      <ul>
-        <li><a mat-list-item href="Ski-Tour">Ski-Tour</a></li>
-        <li><a mat-list-item href="Summer-Trip">Summer-Trip</a></li>
-        <li><a mat-list-item href="Hike">Hike</a></li>
-        <li><a mat-list-item href="Weekend-Trip">Weekend-Trip</a></li>
-        
-      </ul>
+      <a mat-list-item href="home">Home</a>
+      <a mat-list-item href="packing-list">Packing-List</a>
+      <a mat-list-item href="diary">Diary</a>
       <a mat-list-item href="imprint">Imprint</a>
-
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -31,5 +25,6 @@
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>
+    
   </mat-sidenav-content>
 </mat-sidenav-container>
