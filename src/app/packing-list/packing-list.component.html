@@ -3,8 +3,12 @@
         <h1>Add your packing items here</h1>
 
 
-    <input matInput placeholder="Placeholder" type="text" #input>
-    <button mat-raised-button color="primary" (click)="add(input.value)">Add Item</button>
+        <mat-form-field class="example-full-width">
+            <mat-label>Shoes</mat-label>
+            <input matInput placeholder="Shoes" value="" #input>
+        </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="add(input.value)">Add Item</button> 
 
         <mat-selection-list #list>
             <mat-list-option *ngFor="let listitem of packinglist" [value]="listitem.id" (click)="toggleDone(listitem)" [selected]="listitem.done">
